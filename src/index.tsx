@@ -3,7 +3,7 @@ import { DashboardView } from "./dashboard/views/dashboard.view";
 
 export const NFCTrade = () => {
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, padding: 10 }}>
             <DashboardView />
         </View>
     );

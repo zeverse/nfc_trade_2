@@ -5,7 +5,7 @@ import { Text } from "react-native-paper";
 export const BalanceStatistic = (props: BalanceProp) => {
     return (
         <View style={{ flexDirection: "column" }}>
-            <Text>Current Value:</Text>
+            <Text style={{ opacity: 0.5 }}>Current Value:</Text>
 
             <View style={{ flexDirection: "row" }}>
                 <View style={{ flex: 1 }}>
@@ -13,7 +13,6 @@ export const BalanceStatistic = (props: BalanceProp) => {
                         {props.currency || "$"}
                     </Text>
                 </View>
-
 
                 <View style={{ flex: 9 }}>
                     <Text variant="displayLarge" style={{ fontWeight: "bold" }}>

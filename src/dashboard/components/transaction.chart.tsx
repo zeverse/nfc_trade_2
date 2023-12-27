@@ -5,17 +5,17 @@ import { DefaultTransactionChartConfig } from "../config/transaction_chart.confi
 import { Text } from "react-native-paper";
 import { Dimensions } from "react-native";
 
-
 export const TransactionChart = (props: TransactionChartProp) => {
-    return (
-        props.data ?
-            <LineChart
-                bezier
-                data={mapDataChart(props.data)}
-                width={Dimensions.get("window").width}
-                height={Dimensions.get("window").height/3}
-                chartConfig={DefaultTransactionChartConfig}
-            /> : <Text>No Chart</Text>
-
+    return props.data ? (
+        <LineChart
+            bezier
+            data={mapDataChart(props.data)}
+            width={(Dimensions.get("window").width * 9.5) / 10}
+            height={Dimensions.get("window").height / 3}
+            chartConfig={DefaultTransactionChartConfig}
+            style={{borderRadius: 16}}
+        />
+    ) : (
+        <Text>No Chart</Text>
     );
 };

@@ -1,3 +1,3 @@
 export interface ReadCardBtnProp {
-    onPress: () => void;
+    onTranslate: (privateKey: string) => void;
 }
