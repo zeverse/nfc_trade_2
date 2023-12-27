@@ -2,7 +2,7 @@ import { View } from "react-native";
 import { BalanceStatistic } from "../components/balance.statistic";
 import { useEffect, useState } from "react";
 import { getDummyBalance } from "../api/balance.api";
-import { Divider, Text } from "react-native-paper";
+import { Avatar, Card, Divider, Text } from "react-native-paper";
 import { ReadCardBtn } from "../components/read_card.btn";
 import { TransactionChart } from "../components/transaction.chart";
 import { TransactionData } from "../models/transaction.model";
@@ -34,20 +34,24 @@ export const DashboardView = () => {
             <View>
                 <ReadCardBtn
                     onTranslate={(value: string) => {
-                        console.log(value);
+                        setBalance(
+                            new Balance(
+                                (balance?.value || 0) + 100,
+                                balance?.currency || "",
+                            ),
+                        );
                     }}
                 />
             </View>
 
             <View style={{ marginTop: 10 }}>
-                <Text style={{ opacity: 0.5, alignSelf: "flex-start", marginBottom: 5 }}>
-                    Transaction History
-                </Text>
-                <TransactionChart data={transactionHistory} />
-            </View>
-
-            <View style={{ marginTop: 10, alignItems: "center" }}>
-                <Text style={{ opacity: 0.5, alignSelf: "flex-start", marginBottom: 5 }}>
+                <Text
+                    style={{
+                        opacity: 0.5,
+                        alignSelf: "flex-start",
+                        marginBottom: 5,
+                    }}
+                >
                     Transaction History
                 </Text>
                 <TransactionChart data={transactionHistory} />
